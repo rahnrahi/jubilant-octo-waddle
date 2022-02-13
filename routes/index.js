@@ -1,6 +1,8 @@
 
 const loginController = require('../controllers/login')
 const userController = require('../controllers/user')
+const productController = require('../controllers/products')
+
 const mysqlConn = require('../modules/mysql_con')
 
 
@@ -14,5 +16,7 @@ exports.manageRoutes = (app)=>{
 
     app.get('/login', loginController.authenticate)
     app.get('/user/:id', userController.getUser)
+    app.get('/users', userController.getUsers)
+    app.post('/products', productController.geProducts)
 
 }
